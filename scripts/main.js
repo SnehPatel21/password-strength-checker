@@ -1,4 +1,7 @@
-// Main application logic will be implemented in next PR
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Application initialized');
+    // Initialize password checker
+    const passwordChecker = new PasswordChecker();
+    
+    // For debugging purposes
+    window.passwordChecker = passwordChecker;
 });
