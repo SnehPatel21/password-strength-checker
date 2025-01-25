@@ -1,10 +1,270 @@
-/* Base styles */
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #2563eb;
+    --success-color: #22c55e;
+    --warning-color: #eab308;
+    --danger-color: #ef4444;
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --background-primary: #ffffff;
+    --background-secondary: #f3f4f6;
+    --border-color: #e5e7eb;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--background-secondary);
+    color: var(--text-primary);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Container Styles */
+.container {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.password-checker {
+    background-color: var(--background-primary);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+}
+
+/* Header Styles */
+.checker-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.checker-header h1 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.checker-header .description {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Input Section Styles */
+.input-section {
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.password-input-wrapper {
+    position: relative;
+}
+
+.password-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    padding-right: 3rem;
+    border: 2px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.password-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.25rem;
+    transition: color 0.2s ease;
+}
+
+.toggle-password:hover {
+    color: var(--text-primary);
+}
+
+/* Strength Meter Styles */
+.strength-section {
+    margin-bottom: 2rem;
+}
+
+.strength-meter {
+    margin-bottom: 1rem;
+}
+
+.strength-bar-container {
+    height: 0.5rem;
+    background-color: var(--background-secondary);
+    border-radius: 0.25rem;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0;
+    background-color: var(--danger-color);
+    transition: all 0.3s ease;
+}
+
+.strength-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Requirements Section Styles */
+.requirements-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--background-secondary);
+    border-radius: 0.5rem;
+}
+
+.requirements-section h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.requirements-list {
+    list-style: none;
+}
+
+.requirements-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.requirements-list li.valid {
+    color: var(--success-color);
+}
+
+.requirements-list li.invalid {
+    color: var(--danger-color);
+}
+
+.requirements-list li i {
+    font-size: 1rem;
+}
+
+/* Suggestions Section Styles */
+.suggestions-section {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--background-secondary);
+    border-radius: 0.5rem;
+}
+
+.suggestions-section h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.suggestions-list {
+    list-style: none;
+}
+
+.suggestions-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.success-message {
+    color: var(--success-color);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Footer Styles */
+.checker-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.checker-footer p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+    .password-checker {
+        padding: 1.5rem;
+    }
+
+    .checker-header h1 {
+        font-size: 1.25rem;
+    }
+
+    .requirements-section,
+    .suggestions-section {
+        padding: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.suggestions-content {
+    animation: fadeIn 0.3s ease-out;
 }
