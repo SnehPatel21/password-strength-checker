@@ -30,11 +30,23 @@
                             placeholder="Enter your password"
                             autocomplete="new-password"
                         >
+                        <!-- Copy Button -->
+                        <button 
+                            type="button" 
+                            id="copyPassword" 
+                            class="action-button copy-button"
+                            aria-label="Copy password"
+                            title="Copy password"
+                        >
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                        <!-- Toggle Visibility Button -->
                         <button 
                             type="button" 
                             id="togglePassword" 
                             class="toggle-password"
                             aria-label="Toggle password visibility"
+                            title="Show/Hide password"
                         >
                             <i class="fa-regular fa-eye" aria-hidden="true"></i>
                         </button>
@@ -52,6 +64,18 @@
                         Strength: <span id="strengthText">Too Weak</span>
                     </div>
                 </div>
+            </div>
+
+            <!-- Password Generator Button -->
+            <button type="button" class="generate-button" id="generatePassword">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Strong Password
+            </button>
+
+            <!-- Keyboard Shortcuts Hint -->
+            <div class="keyboard-hint">
+                Keyboard shortcuts: 
+                <span>Ctrl/⌘ + / to generate</span> • 
+                <span>Ctrl/⌘ + C to copy</span>
             </div>
 
             <!-- Requirements Section -->
@@ -88,12 +112,12 @@
                     <!-- Suggestions will be added dynamically via JavaScript -->
                 </div>
             </div>
-        </div>
 
-        <!-- Footer with additional information -->
-        <footer class="checker-footer">
-            <p>Tip: Use a combination of letters, numbers, and symbols to create a strong password.</p>
-        </footer>
+            <!-- Footer with additional information -->
+            <footer class="checker-footer">
+                <p>Tip: Use a combination of letters, numbers, and symbols to create a strong password.</p>
+            </footer>
+        </div>
     </div>
 
     <script src="scripts/passwordChecker.js"></script>
