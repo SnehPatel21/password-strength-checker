@@ -5,11 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A powerful password strength checker with real-time feedback">
     <title>Password Strength Checker</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <!-- Content will be added in next PR -->
-    <div id="app"></div>
+    <div class="container">
+        <div class="password-checker">
+            <!-- Header -->
+            <header class="checker-header">
+                <h1>Password Strength Checker</h1>
+                <p class="description">Create a strong password to secure your account</p>
+            </header>
+
+            <!-- Password Input Section -->
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="passwordInput">Password</label>
+                    <div class="password-input-wrapper">
+                        <input 
+                            type="password" 
+                            id="passwordInput"
+                            class="password-input"
+                            placeholder="Enter your password"
+                            autocomplete="new-password"
+                        >
+                        <button 
+                            type="button" 
+                            id="togglePassword" 
+                            class="toggle-password"
+                            aria-label="Toggle password visibility"
+                        >
+                            <i class="fa-regular fa-eye" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strength Meter Section -->
+            <div class="strength-section">
+                <div class="strength-meter">
+                    <div class="strength-bar-container">
+                        <div class="strength-bar" id="strengthBar"></div>
+                    </div>
+                    <div class="strength-label">
+                        Strength: <span id="strengthText">Too Weak</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Requirements Section -->
+            <div class="requirements-section">
+                <h2>Password Requirements</h2>
+                <ul class="requirements-list">
+                    <li id="length" data-requirement="length">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                        <span>At least 8 characters long</span>
+                    </li>
+                    <li id="uppercase" data-requirement="uppercase">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                        <span>Contains uppercase letter</span>
+                    </li>
+                    <li id="lowercase" data-requirement="lowercase">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                        <span>Contains lowercase letter</span>
+                    </li>
+                    <li id="number" data-requirement="number">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                        <span>Contains number</span>
+                    </li>
+                    <li id="special" data-requirement="special">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                        <span>Contains special character</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Suggestions Section -->
+            <div class="suggestions-section" id="suggestions">
+                <h2>Suggestions</h2>
+                <div class="suggestions-content">
+                    <!-- Suggestions will be added dynamically via JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer with additional information -->
+        <footer class="checker-footer">
+            <p>Tip: Use a combination of letters, numbers, and symbols to create a strong password.</p>
+        </footer>
+    </div>
 
     <script src="scripts/passwordChecker.js"></script>
     <script src="scripts/main.js"></script>
