@@ -237,6 +237,105 @@ body {
     color: var(--text-secondary);
 }
 
+/* Interactive Features Styles */
+.action-button {
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.25rem;
+    transition: color 0.2s ease;
+}
+
+.copy-button {
+    right: 5rem;
+}
+
+.action-button:hover {
+    color: var(--primary-color);
+}
+
+.generate-button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.generate-button:hover {
+    background-color: var(--primary-color-dark);
+}
+
+/* Notification Styles */
+.notification {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.notification-success {
+    border-left: 4px solid var(--success-color);
+}
+
+.notification-error {
+    border-left: 4px solid var(--danger-color);
+}
+
+.notification i {
+    font-size: 1.25rem;
+}
+
+.notification-success i {
+    color: var(--success-color);
+}
+
+.notification-error i {
+    color: var(--danger-color);
+}
+
+/* Strength Transition */
+.strength-transition {
+    transition: all 0.3s ease-out;
+}
+
+/* Keyboard Shortcut Hint */
+.keyboard-hint {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
 /* Responsive Styles */
 @media (max-width: 480px) {
     .password-checker {
