@@ -1,6 +1,7 @@
 # Password Strength Checker
 
 A modern, interactive password strength checker built with vanilla JavaScript that provides real-time feedback and suggestions for creating secure passwords.
+[Demo](https://whatsyourpasswordstrength.netlify.app/)
 
 ## 🚀 Features
 
